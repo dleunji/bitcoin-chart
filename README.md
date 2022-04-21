@@ -6,9 +6,7 @@ WebSocket을 활용해보기 위해서 [업비트에서 제공하는 시세 Open
 
 ## ✔︎ WebSocket
 
-TCP 기반의 프로토콜로서, 기존의 일방향적인 HTTP 통신과 다르게 한 차례의 Handshake를 나눈 후에 서버와 클라이언트 간에 연결이 지속되어 양방향 통신이 가능하다.
-
-WebSocket은 **프레임(Frame)**을 이용해 통신을 한다.
+TCP 기반의 프로토콜로서, 기존의 일방향적인 HTTP 통신과 다르게 한 차례의 Handshake를 나눈 후에 서버와 클라이언트 간에 연결이 지속되어 양방향 통신이 가능하다. React에서 사용 시 리소스 누수를 방지하기 위해 반드시 종료 시 WebSocket을 Close해야 한다.
 
 자세한 내용은 [MDN](https://developer.mozilla.org/ko/docs/Web/API/WebSockets_API/Writing_WebSocket_servers)을 참고한다.
 
