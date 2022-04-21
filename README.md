@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+# 📈WebSocket으로 실시간 비트코인 차트 그리기
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![리액트 캡처](https://user-images.githubusercontent.com/46207836/164382083-82a2e92b-d922-4c1f-b8ad-bb443e7edd93.PNG)
 
-## Available Scripts
+WebSocket을 활용해보기 위해서 [업비트에서 제공하는 시세 Open API](https://confluence.nexon.com/pages/viewpage.action?pageId=508897515)를 수신하여 실시간으로 비트코인 차트를 그렸다.
 
-In the project directory, you can run:
+## ✔︎ WebSocket
 
-### `npm start`
+TCP 기반의 프로토콜로서, 기존의 일방향적인 HTTP 통신과 다르게 한 차례의 Handshake를 나눈 후에 서버와 클라이언트 간에 연결이 지속되어 양방향 통신이 가능하다.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+WebSocket은 **프레임(Frame)**을 이용해 통신을 한다.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+자세한 내용은 [MDN](https://developer.mozilla.org/ko/docs/Web/API/WebSockets_API/Writing_WebSocket_servers)을 참고한다.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## ✔︎ 차트 라이브러리
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[KLineChart](https://github.com/liihuu/KLineChart)를 이용해 일자별로 봉이 그려지도록 하였다. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+주식 시장과 다르게 장 마감이 없다는 특성을 고려해 시간대를 결정해 일자를 나누었다.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+참고로 우리나라 주요 거래소마다 봉단위가 다르다. 
 
-### `npm run eject`
+업비트의 경우 우리나라 시간대 기준이나, 빗*의 경우에는 영국 표준시 기준으로 차트가 그려진다.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
